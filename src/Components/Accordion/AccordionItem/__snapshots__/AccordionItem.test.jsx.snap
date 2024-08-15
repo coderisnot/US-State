@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccordionItemComponent matches snapshot 1`] = `
+<li
+  className=""
+>
+  <button
+    aria-controls="id"
+    aria-expanded={true}
+    className="usa-accordion-button  "
+    onClick={[Function]}
+  >
+    <div
+      className="accordion-item-title"
+    >
+      title
+    </div>
+  </button>
+  <div
+    aria-hidden={false}
+    className="usa-accordion-content  accordion-id"
+    id="id"
+  >
+    <span>
+      child
+    </span>
+  </div>
+</li>
+`;

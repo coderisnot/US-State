@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PositionAdditionalDetails matches snapshot 1`] = `
+<div
+  className="usa-grid position-details-additional"
+>
+  <div
+    className="usa-width-one-whole"
+  >
+    <p
+      className="position-details-additional-body"
+    >
+      <span
+        className="title"
+      >
+        About
+      </span>
+      <br />
+      test
+    </p>
+  </div>
+</div>
+`;

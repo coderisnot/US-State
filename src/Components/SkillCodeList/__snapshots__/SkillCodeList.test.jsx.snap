@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillCodeList matches snapshot with an array of three items 1`] = `
+<span>
+  CONSTRUCTION ENGINEERING (6218), COMPUTER SCIENCE (6211), Test Description (5111)
+</span>
+`;
+
+exports[`SkillCodeList matches snapshot with an empty array 1`] = `
+<span>
+  No Skill codes listed
+</span>
+`;
+
+exports[`SkillCodeList renders content correctly with an array of one item 1`] = `
+<span>
+  CONSTRUCTION ENGINEERING (6218)
+</span>
+`;
+
+exports[`SkillCodeList takes props 1`] = `
+<span>
+  CONSTRUCTION ENGINEERING (6218), COMPUTER SCIENCE (6211)
+</span>
+`;

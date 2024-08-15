@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BidderPortfolioGridItemComponent matches snapshot 1`] = `
+<div
+  className="bidder-portfolio-grid-item-container"
+>
+  <div
+    className="usa-grid-full current-user bidder-portfolio-grid-item"
+  >
+    <div
+      className="usa-width-one-fourth grid-item-section"
+    >
+      <div
+        className="checkbox-container"
+      >
+        <CheckBox
+          className=""
+          disabled={false}
+          id="checkbox-1"
+          label="Select this user"
+          labelSrOnly={true}
+          name=""
+          onCheckBoxClick={[Function]}
+          small={true}
+          title=""
+          value={false}
+        />
+      </div>
+      <div
+        className="general-information-container"
+      >
+        <UserProfileGeneralInformation
+          showEditLink={false}
+          useGroup={true}
+          userProfile={
+            Object {
+              "bid_statistics": Array [],
+              "cdo": Object {
+                "email": "shadtrachl@state.gov",
+                "first_name": "Leah",
+                "initials": "LS",
+                "last_name": "Shadtrach",
+                "username": "shadtrachl",
+              },
+              "display_name": "John",
+              "favorite_positions": Array [
+                Object {
+                  "id": 1,
+                  "representation": "[00003026] OMS (COM) (Freetown, Sierra Leone)",
+                },
+                Object {
+                  "id": 4,
+                  "representation": "[00180000] OMS (DCM) (Addis Ababa, Ethiopia)",
+                },
+              ],
+              "grade": "03",
+              "id": 1,
+              "initials": "JD",
+              "is_cdo": false,
+              "skills": Array [
+                Object {
+                  "code": "6218",
+                  "cone": null,
+                  "description": "CONSTRUCTION ENGINEERING",
+                  "id": 63,
+                },
+                Object {
+                  "code": "6211",
+                  "cone": null,
+                  "description": "COMPUTER SCIENCE",
+                  "id": 40,
+                },
+              ],
+              "user": Object {
+                "email": "doej@state.gov",
+                "first_name": "John",
+                "initials": "JD",
+                "last_name": "Doe",
+                "username": "jdoe",
+              },
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="usa-width-one-fourth grid-item-section
+              current-user-personal-information-grid-container"
+    >
+      <UserProfilePersonalInformation
+        userProfile={
+          Object {
+            "bid_statistics": Array [],
+            "cdo": Object {
+              "email": "shadtrachl@state.gov",
+              "first_name": "Leah",
+              "initials": "LS",
+              "last_name": "Shadtrach",
+              "username": "shadtrachl",
+            },
+            "display_name": "John",
+            "favorite_positions": Array [
+              Object {
+                "id": 1,
+                "representation": "[00003026] OMS (COM) (Freetown, Sierra Leone)",
+              },
+              Object {
+                "id": 4,
+                "representation": "[00180000] OMS (DCM) (Addis Ababa, Ethiopia)",
+              },
+            ],
+            "grade": "03",
+            "id": 1,
+            "initials": "JD",
+            "is_cdo": false,
+            "skills": Array [
+              Object {
+                "code": "6218",
+                "cone": null,
+                "description": "CONSTRUCTION ENGINEERING",
+                "id": 63,
+              },
+              Object {
+                "code": "6211",
+                "cone": null,
+                "description": "COMPUTER SCIENCE",
+                "id": 40,
+              },
+            ],
+            "user": Object {
+              "email": "doej@state.gov",
+              "first_name": "John",
+              "initials": "JD",
+              "last_name": "Doe",
+              "username": "jdoe",
+            },
+          }
+        }
+      />
+    </div>
+    <div
+      className="usa-width-one-fourth grid-item-section"
+    >
+      <UserProfileBidInformation
+        denominator={10}
+        draft={0}
+        submitted={0}
+      />
+    </div>
+    <div
+      className="usa-width-one-fourth grid-item-section"
+    >
+      <BidderPortfolioViewMore
+        className="tm-button-alt"
+        isExpanded={false}
+        onClick={[Function]}
+        useLink={false}
+      />
+    </div>
+  </div>
+</div>
+`;

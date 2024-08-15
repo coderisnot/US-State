@@ -1,0 +1,157 @@
+// USWDS font-family overrides
+// Define here
+@mixin font-override {
+  font-family: 'Roboto';
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+[type=button],
+[type=submit],
+[type=reset],
+[type=image],
+button,
+html,
+h6,
+.usa-accordion-button,
+.usa-alert-text,
+.usa-button,
+.usa-button-primary,
+.usa-button:visited,
+.usa-button-primary:visited,
+.usa-form-hint,
+.usa-form-note, {
+  @include font-override;
+}
+
+.usa-sans {
+  a,
+  p,
+  li,
+  span {
+    @include font-override;
+  }
+}
+
+.usa-accordion,
+.usa-accordion-bordered {
+  > ul {
+    > li {
+      @include font-override;
+    }
+
+    button {
+      @include font-override;
+    }
+  }
+
+  > li {
+    @include font-override;
+  }
+}
+
+.usa-nav-primary,
+.usa-sidenav-list {
+  a {
+    @include font-override;
+  }
+}
+
+// USWDS Button overrides to match designs
+.usa-button,
+.usa-button-primary,
+.usa-button:visited,
+.usa-button-primary:visited,
+button,
+[type=button],
+[type=submit],
+[type=reset],
+[type=image] {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: rem(16px);
+}
+
+// for when we want to use react Links as buttons
+.button-link {
+  a:visited {
+    color: $color-white;
+  }
+}
+
+.unstyled-button {
+  background-color: unset;
+  color: unset;
+}
+
+.usa-grid,
+.usa-grid-full {
+  max-width: 1200px;
+}
+
+// scss-lint:disable SelectorFormat
+// Disable overflow scroll bar in Edge
+.glossary-editor-card-definition,
+.Select--multi .Select-multi-value-wrapper {
+  -ms-overflow-style: none;
+}
+
+// Overrides USWDS horizontal padding (2.7em) on submit buttons
+// to what they have on all other buttons
+@media screen and (min-width: 600px) {
+  $padding-horizontal: 2rem;
+
+  [type=submit] {
+    padding-left: $padding-horizontal;
+    padding-right: $padding-horizontal;
+    width: auto;
+  }
+}
+
+// IE10+ specific styles
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  select::-ms-expand {
+    display: none;
+  }
+
+  select {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAQAAAADQ4RFAAAA70lEQVR4AcXPN07AUBAE0LV3DgAtNZlLEFsqjkPs8K3gBGQ6KKlJnePIX/rSoiGnGWfvc7A/TmnO9RNTBZtSvkNezE/Zgk0GpsiELXEyxbf8Bj2ObZEnLolzXcQRer/FhvF8Ew8kLC4Tk2QJl5zoyO6wYrjiScs2igXSELXcnxqe0xNYMlzwuzmoCNc0+WzYHU/avM0skHyf3eFVVPlCx23+yEC6TCpjAgsfGT8sEJfs0mZtDleSuGYd12uWR5oIJreHkWjWvfGWN9i7RLP3iGDvEsHE77/DDtCyB5qolOM6w6YjHcXy0SdSmLOF/XMG8ozGHh3W/IEAAAAASUVORK5CYII=);
+  }
+
+  // Fixes the "here's how you know" text in the header being off set and on a new line.
+  // Use important so that the rule isn't overruled by others.
+  .usa-banner-button {
+    height: auto !important; // scss-lint:disable ImportantRule
+    width: auto;
+  }
+
+  @media screen and (max-width: $screen-md-min) {
+    // IE 11 pushes the fieldset too far to the left when width is not 100% between this width and the next step down
+    .results-search-bar-container {
+      fieldset {
+        width: 100%;
+      }
+    }
+  }
+
+  // fix the placeholder text being too low
+  .react-autosuggest__input {
+    line-height: 0;
+  }
+
+  // fix border edge not being flush with left side of container
+  .expandable-link > .children-ul {
+    margin-left: -5px;
+
+    // set the same value as positive
+    .link-highlighted > .list-item-wrapper {
+      margin-left: 5px;
+    }
+  }
+}
+
+.usa-skipnav {
+  text-decoration: underline;
+}

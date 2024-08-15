@@ -1,0 +1,22 @@
+.tm-checkbox-small {
+  [type=checkbox] + label::before,
+  [type=radio] + label::before {
+    $size: 13px;
+    background-size: 100%;
+    height: $size;
+    line-height: $size;
+    width: $size;
+  }
+}
+
+.tm-checkbox-transparent {
+  [type=checkbox]:not(:checked) + label::before,
+  [type=radio]:not(:checked) + label::before {
+    background-color: transparent;
+  }
+
+  [disabled]:checked + label::before {
+    background-image: url('#{$asset-path}assets/img/check-gray.svg');
+    background-size: 2em;
+  }
+}

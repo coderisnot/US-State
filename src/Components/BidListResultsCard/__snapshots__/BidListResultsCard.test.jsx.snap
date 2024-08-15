@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BidListResultsCardComponent matches snapshot 1`] = `
+<div
+  className="usa-grid-full saved-search-card"
+>
+  <div
+    className="usa-grid-full"
+  >
+    <div
+      className="usa-width-one-whole saved-search-card-name"
+    >
+      <InformationDataPoint
+        className=""
+        content={
+          <BidContent
+            positionNumber="05A"
+            postName="Paris"
+            status="submitted"
+          />
+        }
+        sideBySide={false}
+        title={null}
+        titleOnBottom={true}
+      />
+    </div>
+  </div>
+  <BidActions
+    onRemoveBid={[Function]}
+    onSubmitBid={[Function]}
+    status="submitted"
+  />
+</div>
+`;

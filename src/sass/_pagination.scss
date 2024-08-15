@@ -1,0 +1,57 @@
+.react-paginate {
+  margin: 15px 0 0;
+
+  .disabled {
+    display: none;
+  }
+
+  ul {
+    display: inline-block;
+    margin-top: 2em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  $border-width: 1px;
+
+  // Set our borders, keeping in mind that the first and last children
+  // may be disabled depending on what page the user is on.
+  li {
+    border-color: $bg-gray-dark-2;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+    color: $color-gray;
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: .4em 1em;
+
+    // The second to last element gets a border-right, unlike our general <li>s.
+    &:nth-last-child(2) {
+      border-right-style: solid;
+      border-right-width: $border-width;
+    }
+
+    // The last element has no border-left, but does have a border-right.
+    // This would be the "last" page link.
+    // Now we have even borders regardless of whether or not the "first" or "last"
+    // links are visible.
+    &:last-child {
+      border-left: 0 none;
+      border-right-style: solid;
+      border-right-width: $border-width;
+    }
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .active {
+    background: $blue-primary;
+
+    a {
+      color: $color-white;
+    }
+  }
+}

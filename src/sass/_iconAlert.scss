@@ -1,0 +1,41 @@
+.icon-alert-container {
+  display: inline-block;
+  margin-left: 20px;
+  position: relative;
+
+  .alert-icon-badge {
+    background-color: $blue-primary;
+    border-radius: 100%;
+    color: $color-white;
+    font-size: 9px;
+    font-weight: 200;
+    padding: 2px 1px;
+    position: absolute; // parent should have position: relative
+    right: -5px;
+    text-align: center;
+    top: 15px;
+    width: 14px;
+  }
+
+  .fa {
+    color: $tm-dark-blue;
+    font-size: 19px;
+    vertical-align: middle;
+  }
+}
+
+.icon-alert-disabled {
+  pointer-events: none;
+
+  .fa {
+    color: $color-gray-lighter;
+  }
+}
+
+.glossary-icon {
+  cursor: pointer;
+
+  .fa {
+    margin-right: 5px;
+  }
+}

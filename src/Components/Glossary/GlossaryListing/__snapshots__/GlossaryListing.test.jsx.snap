@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlossaryListingComponent matches snapshot 1`] = `
+<Accordion
+  className="accordion-inverse"
+  isMultiselectable={true}
+>
+  <AccordionItem
+    buttonClass=""
+    childClass=""
+    className=""
+    expanded={false}
+    id="68"
+    setAccordion={[Function]}
+    title="6/8"
+    useIdClass={false}
+  >
+    Definition.
+  </AccordionItem>
+  <AccordionItem
+    buttonClass=""
+    childClass=""
+    className=""
+    expanded={false}
+    id="Assignments-Officer-AO"
+    setAccordion={[Function]}
+    title="Assignments Officer (AO)"
+    useIdClass={false}
+  >
+    test
+  </AccordionItem>
+  <AccordionItem
+    buttonClass=""
+    childClass=""
+    className=""
+    expanded={false}
+    id="Bidder"
+    setAccordion={[Function]}
+    title="Bidder"
+    useIdClass={false}
+  >
+    An employee who is applying for a position.
+  </AccordionItem>
+  <AccordionItem
+    buttonClass=""
+    childClass=""
+    className=""
+    expanded={false}
+    id="Bureau"
+    setAccordion={[Function]}
+    title="Bureau"
+    useIdClass={false}
+  >
+    The organization sponsoring a position.
+  </AccordionItem>
+  <AccordionItem
+    buttonClass=""
+    childClass=""
+    className=""
+    expanded={false}
+    id="C"
+    setAccordion={[Function]}
+    title="C"
+    useIdClass={false}
+  >
+    Description
+  </AccordionItem>
+</Accordion>
+`;

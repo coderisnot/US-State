@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlossaryComponent matches snapshot 1`] = `
+<div
+  className="tm-glossary"
+>
+  <div
+    aria-describedby="glossary-title"
+    aria-hidden={false}
+    className="glossary glossary-visible"
+    id="glossary"
+  >
+    <button
+      className="glossary-close"
+      onClick={[Function]}
+      title="Close glossary"
+    >
+      <FontAwesome
+        name="times"
+      />
+      <span
+        className="usa-sr-only"
+      >
+        Close Glossary
+      </span>
+    </button>
+    <div
+      className="glossary-content-container"
+    >
+      <h3
+        id="glossary-title"
+      >
+        Glossary
+      </h3>
+      <div>
+        <GlossarySearch
+          changeText={[Function]}
+          searchTextValue=""
+        />
+        <div
+          className="glossary-content"
+        >
+          <GlossaryComponent
+            glossaryItems={
+              Array [
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T15:33:52.986137Z",
+                  "definition": "Definition.",
+                  "id": 3,
+                  "last_editing_user": "Leah Shadtrach",
+                  "link": "",
+                  "title": "6/8",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T15:18:40.350271Z",
+                  "definition": "test",
+                  "id": 4,
+                  "last_editing_user": "Leah Shadtrach",
+                  "link": "",
+                  "title": "Assignments Officer (AO)",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T13:59:13.385817Z",
+                  "definition": "An employee who is applying for a position.",
+                  "id": 5,
+                  "last_editing_user": null,
+                  "link": "",
+                  "title": "Bidder",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T13:59:13.385817Z",
+                  "definition": "The organization sponsoring a position.",
+                  "id": 7,
+                  "last_editing_user": null,
+                  "link": "",
+                  "title": "Bureau",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T14:35:41.904583Z",
+                  "definition": "Description",
+                  "id": 6,
+                  "last_editing_user": "Leah Shadtrach",
+                  "link": "",
+                  "title": "C",
+                },
+              ]
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GlossaryComponent matches snapshot when visible is false 1`] = `
+<div
+  className="tm-glossary"
+>
+  <div
+    aria-describedby="glossary-title"
+    aria-hidden={true}
+    className="glossary glossary-hidden"
+    id="glossary"
+  >
+    <button
+      className="glossary-close"
+      onClick={[Function]}
+      title="Close glossary"
+    >
+      <FontAwesome
+        name="times"
+      />
+      <span
+        className="usa-sr-only"
+      >
+        Close Glossary
+      </span>
+    </button>
+    <div
+      className="glossary-content-container"
+    >
+      <h3
+        id="glossary-title"
+      >
+        Glossary
+      </h3>
+      <div>
+        <GlossarySearch
+          changeText={[Function]}
+          searchTextValue=""
+        />
+        <div
+          className="glossary-content"
+        >
+          <GlossaryComponent
+            glossaryItems={
+              Array [
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T15:33:52.986137Z",
+                  "definition": "Definition.",
+                  "id": 3,
+                  "last_editing_user": "Leah Shadtrach",
+                  "link": "",
+                  "title": "6/8",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T15:18:40.350271Z",
+                  "definition": "test",
+                  "id": 4,
+                  "last_editing_user": "Leah Shadtrach",
+                  "link": "",
+                  "title": "Assignments Officer (AO)",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T13:59:13.385817Z",
+                  "definition": "An employee who is applying for a position.",
+                  "id": 5,
+                  "last_editing_user": null,
+                  "link": "",
+                  "title": "Bidder",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T13:59:13.385817Z",
+                  "definition": "The organization sponsoring a position.",
+                  "id": 7,
+                  "last_editing_user": null,
+                  "link": "",
+                  "title": "Bureau",
+                },
+                Object {
+                  "date_created": "2018-02-07T13:59:13.282581Z",
+                  "date_updated": "2018-02-07T14:35:41.904583Z",
+                  "definition": "Description",
+                  "id": 6,
+                  "last_editing_user": "Leah Shadtrach",
+                  "link": "",
+                  "title": "C",
+                },
+              ]
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,177 @@
+version: 2.0
+default-docker-node: &default-docker-node
+  docker:
+    - image: circleci/node:6.11.0
+      environment:
+        TZ: "/usr/share/zoneinfo/America/New_York"
+        CC_TEST_REPORTER_ID: c05c8cb360b66d7b92767ad0ffdeef2c8519f390d700b8bc2d2b7ee6c2760791
+        COMPOSE_FILE_NAME: circleci-docker-compose.yml
+        API_REPO_NAME: state-talentmap-api
+        API_REPO_BRANCH: staging
+        PUBLIC_URL: /talentmap/
+        STATIC_PATH: /home/circleci/talentmap/public
+        API_ROOT: http://app:8000/
+        OBC_URL: http://obc:4000/
+jobs:
+  setup:
+    <<: *default-docker-node
+    working_directory: ~/talentmap
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run: yarn
+      - save_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: ~/talentmap
+          paths:
+            - node_modules
+  jest:
+    <<: *default-docker-node
+    working_directory: ~/talentmap
+    steps:
+      - checkout
+      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - run: chmod +x ./cc-test-reporter
+      - run: ./cc-test-reporter before-build
+      - run: chmod +x ./certs/certs.sh 
+      - run: cd certs && ./certs.sh
+      - run: cd ..
+      - restore_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run: yarn
+      - run:
+          name: Install JUnit coverage reporter
+          command: yarn add --dev jest-junit
+      - run:
+          name: Jest Test Coverage
+          command: yarn test -- --ci --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/jest/test-results.xml"
+      - run: ./cc-test-reporter after-build --exit-code $? < coverage/lcov.info
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: coverage/lcov.info
+          destination: coverage/lcov.info
+  site:
+    <<: *default-docker-node
+    working_directory: ~/talentmap
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run: yarn
+      - run:
+          name: Build site
+          command: yarn build
+      - run:
+          name: Zip artifact
+          command: zip talentmap.zip -r build/*
+      - store_artifacts:
+          path: talentmap.zip
+          destination: talentmap.zip
+ # Disabled see 1368 pa11y:
+ #   <<: *default-docker-node
+ #   steps:
+ #     - setup_remote_docker
+ #     - checkout
+ #     - run:
+ #         name: Replace placeholders in Compose file
+ #         command: |
+ #           TAG=$CIRCLE_BRANCH-$CIRCLE_SHA1
+ #           sed -i "s#@@LABEL@@#${TAG}#g" $COMPOSE_FILE_NAME
+ #           sed -i "s#@@REPO_NAME@@#${CIRCLE_PROJECT_REPONAME,,}#g" $COMPOSE_FILE_NAME
+ #           sed -i "s#@@API_REPO_NAME@@#${API_REPO_NAME}#g" $COMPOSE_FILE_NAME
+ #           sed -i "s#@@API_REPO_BRANCH@@#${API_REPO_BRANCH}#g" $COMPOSE_FILE_NAME
+ #     - run:
+ #         name: Initialize Dummy Data Container
+ #         command: |
+ #           docker-compose -f $COMPOSE_FILE_NAME create data
+ #           docker cp . data:/app
+ #     - run:
+ #         name: Migrate DB
+ #         command: |
+ #           docker-compose -f $COMPOSE_FILE_NAME \
+ #             run app bash -c \
+ #             "./wait-for-postgres.sh db && python manage.py migrate"
+ #     - run:
+ #         name: Run Yarn
+ #         command: |
+ #           docker-compose -f $COMPOSE_FILE_NAME \
+ #             run web yarn
+ #     - run:
+ #         name: Start Server
+ #         command: docker-compose -f $COMPOSE_FILE_NAME up -d
+ #     - run:
+ #         name: Run Pa11y
+ #         command: |
+ #           docker run --name pa11y --network container:web \
+ #             --volumes-from data -t talentmap/pa11y-ci \
+ #             pa11y-ci -c /app/.pa11yci
+  zap:
+    <<: *default-docker-node
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run:
+          name: Replace placeholders in Compose file
+          command: |
+            TAG=$CIRCLE_BRANCH-$CIRCLE_SHA1
+            sed -i "s#@@LABEL@@#${TAG}#g" $COMPOSE_FILE_NAME
+            sed -i "s#@@REPO_NAME@@#${CIRCLE_PROJECT_REPONAME}#g" $COMPOSE_FILE_NAME
+            sed -i "s#@@API_REPO_NAME@@#${API_REPO_NAME}#g" $COMPOSE_FILE_NAME
+            sed -i "s#@@API_REPO_BRANCH@@#${API_REPO_BRANCH}#g" $COMPOSE_FILE_NAME
+      - run:
+          name: Initialize Dummy Data Container
+          command: |
+            docker-compose -f $COMPOSE_FILE_NAME create data
+            docker cp . data:/app
+      - run:
+          name: Migrate DB
+          command: |
+            docker-compose -f $COMPOSE_FILE_NAME \
+              run app bash -c \
+              "./wait-for-postgres.sh db && python manage.py migrate"
+      - run:
+          name: Run Yarn
+          command: |
+            docker-compose -f $COMPOSE_FILE_NAME \
+              run web yarn
+      - run:
+          name: Start Server
+          command: docker-compose -f $COMPOSE_FILE_NAME up -d
+      - run:
+          name: Run ZAP
+          command: |
+            docker run --name zap --network container:web \
+              -v /zap/wrk/ \
+              -t owasp/zap2docker-weekly \
+              zap-baseline.py -d \
+                -t http://web:3000/ \
+                -w "zap_results.md" \
+                -z "-Xmx4g"
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - setup
+      - jest:
+          requires:
+            - setup
+      - site:
+          requires:
+            - setup
+      # Disabled see 1368 - pa11y:
+      #    requires:
+      #      - docker-build
+      - zap:
+          filters:
+            tags:
+              only: /^zap.*/
+            branches:
+              ignore: /.*/

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BooleanFilterContainerComponent matches snapshot 1`] = `
+<FieldSet
+  className=""
+  legend="Legend"
+  legendSrOnly={true}
+>
+  <BooleanFilter
+    item={
+      Object {
+        "data": Array [
+          Object {
+            "isSelected": true,
+          },
+        ],
+        "item": Object {
+          "selectionRef": "ref",
+          "title": "title",
+        },
+      }
+    }
+    onBooleanFilterClick={[Function]}
+  />
+</FieldSet>
+`;

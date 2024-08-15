@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot when logged in 1`] = `
+<div
+  className="search-bar-hidden is-on-results-page"
+>
+  <InteractiveElement
+    className="usa-skipnav"
+    onClick={[Function]}
+    role="link"
+    type="div"
+  >
+    Skip to main content
+  </InteractiveElement>
+  <header
+    className="usa-header usa-header-extended tm-header"
+    id="header"
+    role="banner"
+  >
+    <Connect(Component) />
+    <StateBanner />
+    <BetaHeader />
+    <div
+      className="usa-navbar padded-main-content padded-main-content--header"
+    >
+      <button
+        className="usa-menu-btn"
+      >
+        Menu
+      </button>
+      <div
+        className="usa-logo"
+        id="logo"
+      >
+        <div
+          className="usa-logo-text"
+        >
+          <Link
+            replace={false}
+            to="/"
+          >
+            <img
+              alt="TalentMAP logo"
+              src="/assets/logos/png/horizontal_color_thin.png"
+            />
+          </Link>
+        </div>
+      </div>
+      <MediaQueryWrapper
+        breakpoint="screenMdMin"
+        widthType="min"
+      >
+        <DesktopNav
+          isLoggedIn={true}
+          logout={[Function]}
+          shouldShowSearchBar={true}
+          toggleSearchVisibility={[Function]}
+          userProfile={
+            Object {
+              "user": Object {
+                "first_name": "test",
+              },
+            }
+          }
+        />
+      </MediaQueryWrapper>
+    </div>
+    <MediaQueryWrapper
+      breakpoint="screenSmMax"
+      widthType="max"
+    >
+      <MobileNav
+        logout={[Function]}
+        showLogin={false}
+        user="test"
+      />
+    </MediaQueryWrapper>
+    <div
+      className="usa-overlay"
+    />
+  </header>
+</div>
+`;
+
+exports[`Header matches snapshot when logged out 1`] = `
+<div
+  className="search-bar-hidden is-on-results-page"
+>
+  <InteractiveElement
+    className="usa-skipnav"
+    onClick={[Function]}
+    role="link"
+    type="div"
+  >
+    Skip to main content
+  </InteractiveElement>
+  <header
+    className="usa-header usa-header-extended tm-header"
+    id="header"
+    role="banner"
+  >
+    <Connect(Component) />
+    <StateBanner />
+    <BetaHeader />
+    <div
+      className="usa-navbar padded-main-content padded-main-content--header"
+    >
+      <button
+        className="usa-menu-btn"
+      >
+        Menu
+      </button>
+      <div
+        className="usa-logo"
+        id="logo"
+      >
+        <div
+          className="usa-logo-text"
+        >
+          <Link
+            replace={false}
+            to="/"
+          >
+            <img
+              alt="TalentMAP logo"
+              src="/assets/logos/png/horizontal_color_thin.png"
+            />
+          </Link>
+        </div>
+      </div>
+      <MediaQueryWrapper
+        breakpoint="screenMdMin"
+        widthType="min"
+      >
+        <DesktopNav
+          isLoggedIn={false}
+          logout={[Function]}
+          shouldShowSearchBar={true}
+          toggleSearchVisibility={[Function]}
+          userProfile={Object {}}
+        />
+      </MediaQueryWrapper>
+    </div>
+    <MediaQueryWrapper
+      breakpoint="screenSmMax"
+      widthType="max"
+    >
+      <MobileNav
+        logout={[Function]}
+        showLogin={true}
+        user={null}
+      />
+    </MediaQueryWrapper>
+    <div
+      className="usa-overlay"
+    />
+  </header>
+</div>
+`;

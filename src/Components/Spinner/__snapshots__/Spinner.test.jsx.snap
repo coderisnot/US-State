@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner can accept the type prop 1`] = `
+<div
+  className="tm-spinner tm-spinner-results "
+>
+  <img
+    alt="center"
+    className="center"
+    src="center.svg"
+  />
+  <img
+    alt="middle"
+    className="middle"
+    src="middle.svg"
+  />
+  <img
+    alt="outer"
+    className="outer"
+    src="outer.svg"
+  />
+</div>
+`;

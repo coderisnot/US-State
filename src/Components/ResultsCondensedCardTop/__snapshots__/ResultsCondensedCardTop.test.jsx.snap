@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsCondensedCardTopComponent matches snapshot 1`] = `
+<div
+  className="usa-grid-full condensed-card-top "
+>
+  <div
+    className="usa-grid-full condensed-card-top-header-container"
+  >
+    <div
+      className="usa-width-two-thirds condensed-card-top-header condensed-card-top-header-left"
+    >
+      <h3>
+        OMS (DCM)
+      </h3>
+    </div>
+    <div
+      className="usa-width-one-third condensed-card-top-header condensed-card-top-header-right"
+    >
+      <dt>
+        Grade:
+      </dt>
+       
+      <dd>
+        06
+      </dd>
+    </div>
+  </div>
+  <div
+    className="usa-grid-full"
+  >
+    <Link
+      replace={false}
+      to="/details/10034001"
+    >
+      View position
+    </Link>
+  </div>
+</div>
+`;
+
+exports[`ResultsCondensedCardTopComponent matches snapshot when type is serviceNeed 1`] = `
+<div
+  className="usa-grid-full condensed-card-top card-top-alternate"
+>
+  <div
+    className="usa-grid-full condensed-card-top-header-container"
+  >
+    <div
+      className="usa-width-two-thirds condensed-card-top-header condensed-card-top-header-left"
+    >
+      <span>
+        <FontAwesome
+          name="bolt"
+        />
+         
+      </span>
+      <h3>
+        OMS (DCM)
+      </h3>
+    </div>
+    <div
+      className="usa-width-one-third condensed-card-top-header condensed-card-top-header-right"
+    >
+      <dt>
+        Grade:
+      </dt>
+       
+      <dd>
+        06
+      </dd>
+    </div>
+  </div>
+  <div
+    className="usa-grid-full"
+  >
+    <Link
+      replace={false}
+      to="/details/10034001"
+    >
+      View position
+    </Link>
+  </div>
+</div>
+`;

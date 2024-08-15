@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileDashboardComponent matches snapshot when loaded 1`] = `
+<div
+  className="usa-grid-full user-dashboard user-dashboard-main profile-content-inner-container"
+>
+  <div
+    className="usa-grid-full"
+  >
+    <div
+      className="usa-grid-full dashboard-top-section"
+    >
+      <ProfileSectionTitle
+        title="Hello, John"
+      />
+    </div>
+    <MediaQueryWrapper
+      breakpoint="screenSmMax"
+      widthType="max"
+    />
+  </div>
+</div>
+`;
+
+exports[`ProfileDashboardComponent matches snapshot when loading 1`] = `
+<div
+  className="usa-grid-full user-dashboard user-dashboard-main profile-content-inner-container"
+>
+  <Spinner
+    size="big"
+    type="homepage-position-results"
+  />
+</div>
+`;

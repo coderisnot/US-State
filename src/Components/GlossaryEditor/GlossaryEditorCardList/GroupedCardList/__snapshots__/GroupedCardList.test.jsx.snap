@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupedCardListComponent matches snapshot 1`] = `
+<div
+  className="usa-grid-full grouped-glossary-listing"
+>
+  <div
+    className="usa-grid-full term-group"
+  >
+    <h3
+      aria-label="Terms beginning with the character A"
+      className="term-title"
+    >
+      A
+    </h3>
+    <div
+      className="usa-width-one-half glossary-editor-card-container "
+    >
+      <GlossaryEditorCard
+        hasErrored={Object {}}
+        isNewTerm={false}
+        onCancel={[Function]}
+        onSuccess={Object {}}
+        submitGlossaryTerm={[Function]}
+        success={Object {}}
+        term={
+          Object {
+            "date_created": "2018-02-07T13:59:13.282581Z",
+            "date_updated": "2018-02-07T14:35:41.904583Z",
+            "definition": "The employee responsible for filling the position.",
+            "id": 2,
+            "last_editing_user": "Leah Shadtrach",
+            "link": "",
+            "title": "Assignment Officer (AO)",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="usa-grid-full term-group"
+  >
+    <h3
+      aria-label="Terms beginning with the character B"
+      className="term-title"
+    >
+      B
+    </h3>
+    <div
+      className="usa-width-one-half glossary-editor-card-container "
+    >
+      <GlossaryEditorCard
+        hasErrored={Object {}}
+        isNewTerm={false}
+        onCancel={[Function]}
+        onSuccess={Object {}}
+        submitGlossaryTerm={[Function]}
+        success={Object {}}
+        term={
+          Object {
+            "date_created": "2018-02-07T13:59:13.282581Z",
+            "date_updated": "2018-02-07T14:35:41.904583Z",
+            "definition": "An employee who is applying for a position.",
+            "id": 3,
+            "last_editing_user": "Leah Shadtrach",
+            "link": "",
+            "title": "Bidder",
+          }
+        }
+      />
+    </div>
+    <div
+      className="usa-width-one-half glossary-editor-card-container usa-end-row"
+    >
+      <GlossaryEditorCard
+        hasErrored={Object {}}
+        isNewTerm={false}
+        onCancel={[Function]}
+        onSuccess={Object {}}
+        submitGlossaryTerm={[Function]}
+        success={Object {}}
+        term={
+          Object {
+            "date_created": "2018-02-07T13:59:13.282581Z",
+            "date_updated": "2018-02-07T14:35:41.904583Z",
+            "definition": "The organization sponsoring a position.",
+            "id": 5,
+            "last_editing_user": "Leah Shadtrach",
+            "link": "",
+            "title": "Bureau",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,166 @@
+.home {
+
+  background-color: $color-gray-lightest-alt;
+
+  .hidden {
+    display: none;
+  }
+
+  .alert-text {
+    color: $alert-red;
+  }
+
+  .homepage-positions-section-container {
+    position: relative;
+  }
+
+  .homepage-positions-section-container-inner {
+    padding-top: 25px;
+    position: relative;
+  }
+
+  .explore-section {
+    background-color: $color-white;
+
+    border-bottom: 1px solid $color-gray-light;
+
+    .explore-section-fieldset {
+      float: left;
+    }
+
+    .view-results-button {
+      float: left;
+      margin: 54px 0 0;
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin: 0;
+      }
+    }
+
+    label {
+      font-family: Merriweather;
+      font-size: 22px;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    legend {
+      font-size: 1em;
+    }
+
+    select {
+      $explore-select-width: 300px;
+
+      font-size: 16px;
+      height: 30px;
+      max-width: 100%;
+      min-width: $explore-select-width;
+      padding: 0 30px 0 10px;
+      -webkit-padding-end: 30px;
+      -webkit-padding-start: 10px;
+
+      @media screen and (max-width: 625px) {
+        max-width: 100%;
+        min-width: none;
+      }
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+      .usa-form {
+        max-width: none;
+      }
+    }
+  }
+
+  .explore-section-inner {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .explore-map-container {
+    margin: 10px 0 0;
+
+    .explore-map {
+      margin: 10px 0 0;
+      width: 97%;
+    }
+  }
+}
+
+.positions-section {
+
+  margin-top: 25px;
+
+  position: relative;
+
+  .positions-section-container {
+    border-bottom: solid 1px $color-gray-light;
+    bottom: -1px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .positions-section-container-left {
+    float: left;
+  }
+
+  .positions-section-container-right {
+    float: right;
+    text-align: right;
+  }
+
+  .positions-section-title-header {
+    border-bottom: 1px solid;
+    bottom: -1px;
+    display: inline-block;
+    position: relative;
+
+    a {
+      color: inherit;
+      display: block;
+      text-decoration: none;
+    }
+  }
+
+  .positions-section-title {
+    font-family: Merriweather;
+    font-size: 19px;
+    font-weight: inherit;
+    line-height: inherit;
+    margin-bottom: inherit;
+    margin-top: inherit;
+
+    .fa {
+      color: $blue-primary;
+      margin-right: 8px;
+    }
+
+    .fa-angle-right {
+      color: $color-black;
+      display: inline-flex;
+      font-size: 2.6rem;
+      font-weight: bold;
+      margin: 0 0 0 7px;
+    }
+  }
+
+  .positions-section-view-more {
+    font-family: Roboto;
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+    }
+
+    .fa {
+      margin-left: 6px;
+    }
+  }
+}
+
+.explore-region-fieldset {
+  label {
+    max-width: unset;
+  }
+}

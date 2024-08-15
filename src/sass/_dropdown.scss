@@ -1,0 +1,122 @@
+// scss-lint:disable SelectorFormat
+// The react-simple-dropdown module uses two underscores in its class names.
+// Instead of modifying the source css, the SelectorFormat rule
+// has been disabled for this file in order to override styles on the
+// default classes.
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown__content {
+  display: none;
+  min-width: 160px;
+  position: absolute;
+  right: 0;
+  z-index: $dropdown-content-z;
+
+  .account-dropdown-link {
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  .account-dropdown-link:hover,
+  .account-dropdown-link:focus {
+    background: $blue-primary;
+    color: $color-white;
+  }
+}
+
+.dropdown--active .dropdown__content {
+  display: block;
+}
+
+.account-dropdown--avatar {
+  font-size: $avatar-dropdown-size * $avatar-text-ratio;
+  height: $avatar-dropdown-size;
+  line-height: $avatar-dropdown-size;
+  margin: 0 5px 0 0;
+  width: $avatar-dropdown-size;
+}
+
+.account-dropdown {
+  position: relative;
+
+  .dropdown__trigger {
+    display: inline-block;
+    height: $avatar-dropdown-size;
+
+    &::after {
+      content: '\f107';
+      font-family: 'FontAwesome';
+      font-size: 2rem;
+      margin: 0 0 0 5px;
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown__content {
+    background: $avatar-dropdown-background;
+    border-top: $avatar-dropdown-border-top-color 1px solid;
+    box-shadow: 0 5px 8px $avatar-dropdown-box-shadow-color;
+    margin-top: 5px;
+  }
+}
+
+.account-dropdown--avatar,
+.account-dropdown--name {
+  vertical-align: middle;
+}
+
+.account-dropdown--name {
+  margin-left: 5px;
+}
+
+.account-dropdown--quick-links,
+.account-dropdown--management-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.account-dropdown--segment {
+  border-bottom: $avatar-dropdown-account-segment-color 1px solid;
+  padding: 10px 15px;
+}
+
+.account-dropdown--link {
+  margin: 5px 0;
+}
+
+.actions-dropdown {
+  position: relative;
+
+  .dropdown__content {
+    background-color: $color-white;
+    box-shadow: 0 0 1px 1px $color-gray-lighter;
+    display: block;
+    font-size: 13px;
+    padding-bottom: 30px;
+    right: -2px;
+    top: 25px;
+    width: 120px;
+  }
+
+  .account-dropdown--segment {
+    border: 0;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: right;
+  }
+
+  .disabled {
+    color: $color-gray-light;
+    cursor: not-allowed;
+  }
+
+  .account-dropdown--segment:hover:not(.disabled),
+  .account-dropdown--segment:focus:not(.disabled) {
+    font-weight: bold;
+  }
+}
+// scss-lint:enable SelectorFormat

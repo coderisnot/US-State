@@ -1,0 +1,272 @@
+$condensed-card-margin-bottom: 15px;
+$condensed-card-padding: 9px 20px 9px;
+$condensed-card-data-padding: 15px 20px 9px;
+
+.condensed-card {
+
+  border: 1px solid $color-gray-light;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: $condensed-card-margin-bottom;
+
+  .new-flag {
+    background-color: $color-white;
+    border-radius: 100px;
+    color: $color-black;
+    font-size: 13px;
+    padding: .2em 1em;
+    text-align: center;
+    width: auto;
+  }
+
+  .tm-button {
+    float: left;
+    margin-top: 0;
+  }
+
+  .favorite-container {
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 15px;
+    padding-left: 1em;
+  }
+
+  .link-button-wrapper {
+    a:visited {
+      color: $color-black;
+    }
+  }
+
+  .link-button-wrapper:hover,
+  .link-button-wrapper:active {
+    a:visited {
+      color: $color-white;
+    }
+
+    .fa {
+      color: $color-white;
+    }
+  }
+
+  .condensed-card-top {
+    background-color: $blue-primary;
+    border-bottom: 1px solid $color-gray-lightest;
+    color: $color-white;
+    overflow: hidden;
+    padding: $condensed-card-padding;
+    position: relative;
+
+    a {
+      color: $color-white;
+    }
+  }
+
+  .card-top-alternate {
+    background-color: $tm-navy;
+  }
+
+  .condensed-top-background-image {
+    filter: alpha(opacity = 10);
+    font-size: 150px;
+    left: 32%;
+    opacity: .1;
+    position: absolute;
+    top: -36%;
+  }
+
+  .condensed-card-top-header-container {
+    margin-bottom: 5px;
+  }
+
+  .condensed-card-top-header-left {
+    float: left;
+
+    h3 {
+      display: inline;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      margin-bottom: inherit;
+      margin-top: 0;
+    }
+  }
+
+  .condensed-card-top-header-right {
+    float: right;
+    text-align: right;
+    width: auto;
+
+    dt,
+    dd {
+      display: inline;
+      float: left;
+      margin-left: 0;
+    }
+
+    dd {
+      font-weight: 300;
+      margin-left: 5px;
+    }
+  }
+
+  .condensed-card-last-updated {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .condensed-card-bottom-container {
+    background-color: $color-white;
+    padding: $condensed-card-data-padding;
+    padding-bottom: 5px;
+    position: relative;
+  }
+
+  .condensed-card-bottom {
+    font-size: 16px;
+  }
+
+  .condensed-card-buttons-section {
+    margin-bottom: 10px;
+  }
+
+  .condensed-card-statistics {
+    border-bottom: 1px solid $color-gray-lighter;
+    border-top: 0;
+
+    .bid-count-list-item {
+      background: $blue-primary;
+      color: $color-white;
+      margin-bottom: 0;
+    }
+
+    .bid-count-number {
+      padding: .2em 1em;
+    }
+
+    .bid-count-list-item:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    .bid-count-list-item:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    .bid-count-list {
+      float: right;
+      padding-left: 0;
+    }
+
+    .bid-count-label {
+      float: left;
+      font-weight: bold;
+      margin-right: .5em;
+      padding-top: .2em;
+    }
+  }
+
+  .condensed-card-data {
+    line-height: 1.4em;
+    margin-bottom: 20px;
+
+    a {
+      color: $blue-primary;
+      text-decoration: none;
+    }
+  }
+
+  .last-updated-date {
+    font-weight: 300;
+  }
+
+  .condensed-card-data-title {
+    float: left;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .condensed-card-data-content {
+    float: left;
+  }
+
+  .title-fixed-width {
+    min-width: 80px;
+  }
+}
+
+@media screen and (max-width: $screen-md-min) {
+  .usa-width-one-third.condensed-card {
+    display: block;
+    float: left;
+    margin-right: initial;
+    width: 100%;
+  }
+}
+
+.condensed-card-first-big {
+  float: left;
+
+  .tm-button-alt {
+    bottom: unset;
+    position: unset;
+  }
+
+  .condensed-card-top {
+    min-height: 279px;
+  }
+
+  .condensed-card-last-updated {
+    bottom: 0;
+    position: absolute;
+  }
+
+  .condensed-top-background-image {
+    top: 17%;
+  }
+
+  .condensed-card-bottom {
+    min-height: 258px;
+  }
+}
+
+.condensed-card-second {
+  float: left;
+}
+
+.condensed-card-third {
+  float: left;
+}
+
+.condensed-card:last-child {
+  margin-bottom: $condensed-card-margin-bottom;
+}
+
+.condensed-card-footer {
+  background-color: $color-white;
+  border-top: 1px solid $color-gray-lighter;
+  font-size: 13px;
+
+  .condensed-card-footer-container {
+    padding: $condensed-card-padding;
+  }
+
+  .condensed-card-footer-left {
+    float: left;
+  }
+
+  .condensed-card-footer-right {
+    float: right;
+  }
+}
+
+.condensed-card-data-point {
+  @media screen and (min-width: $screen-md-min) {
+    display: flex;
+
+    .condensed-card-data-content {
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  }
+}
